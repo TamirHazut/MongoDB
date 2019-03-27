@@ -46,9 +46,11 @@ def get_db():
         MFLIX_DB_URI,
         # TODO: Connection Pooling
         # Set the maximum connection pool size to 50 active connections.
+        maxpoolsize=50,
         # TODO: Timeouts
         # Set the write timeout limit to 2500 milliseconds.
-        )["mflix"]
+        wtimeout=2500
+        )["mflix"
     return db
 
 
@@ -287,7 +289,7 @@ def get_movie(id):
 
     # TODO: Error Handling
     # If an invalid ID is passed to `get_movie`, it should return None.
-    except (StopIteration) as _:
+    except (StopIteration, InvalidId) as _:
 
         """
         Ticket: Error Handling
