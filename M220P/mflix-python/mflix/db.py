@@ -50,7 +50,7 @@ def get_db():
         # TODO: Timeouts
         # Set the write timeout limit to 2500 milliseconds.
         wtimeout=2500
-        )["mflix"
+        )["mflix"]
     return db
 
 
